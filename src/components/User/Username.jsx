@@ -3,6 +3,8 @@ import { useState, useRef } from 'react';
 
 import frontEndError from '../../utils/frontEndError';
 
+import LoadingButton from '../../utils/LoadingButton';
+
 import { API_URL } from '../../env';
 
 const Username = ({ user, setUser }) => {
@@ -51,11 +53,13 @@ const Username = ({ user, setUser }) => {
 };
 
 const EditUsername = ({ user, setUser, setViewMode }) => {
+    const [loading, setLoading] = useState('');
     const fnameRef = useRef();
     const lnameRef = useRef();
 
     const changeUsername = async (e) => {
         e.preventDefault();
+        setLoading(e.target.id);
         const authToken = localStorage.getItem('authToken');
         const userToken = localStorage.getItem('userToken');
         if (!authToken || !userToken) setUser({});
@@ -69,12 +73,14 @@ const EditUsername = ({ user, setUser, setViewMode }) => {
                 { fname, lname },
                 { headers: { Authorization: `Bearer ${authToken}` } }
             );
+            setLoading('');
             setUser({ ...user, fname, lname });
             new frontEndError('Saved', 'first-name', '');
             document.getElementById('first-name').value = '';
             document.getElementById('last-name').value = '';
         } catch (e) {
             console.log(e.message);
+            setLoading('');
         }
     };
     return (
@@ -105,17 +111,21 @@ const EditUsername = ({ user, setUser, setViewMode }) => {
             </div>
 
             <div className="d-flex justify-content-evenly">
-                <input
-                    type="button"
-                    className="btn btn-primary flex-grow-0"
+                <LoadingButton
+                    loading={loading}
+                    className={'flex-grow-0'}
+                    id="change-name"
                     value="Save"
                     onClick={changeUsername}
+                    disabled={loading}
                 />
+
                 <input
                     type="button"
                     className="btn btn-secondary flex-grow-0"
                     value="Cancel"
                     onClick={setViewMode}
+                    disabled={loading}
                 />
             </div>
         </div>

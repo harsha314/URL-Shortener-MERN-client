@@ -4,6 +4,8 @@ import axios from 'axios';
 import { API_URL } from '../../env';
 import frontEndError from '../../utils/frontEndError';
 
+import LoadingButton from '../../utils/LoadingButton';
+
 const Password = ({ user, setUser }) => {
     const [mode, setMode] = useState('view');
 
@@ -85,6 +87,7 @@ const EditPassword = ({ user, setUser, setViewMode }) => {
         setLoading(e.target.id);
         const authToken = localStorage.authToken;
         const userToken = localStorage.userToken;
+        setLoading(e.target.id);
 
         if (!authToken || !userToken) setUser({});
         try {
@@ -105,16 +108,17 @@ const EditPassword = ({ user, setUser, setViewMode }) => {
                 { oldPassword, newPassword },
                 { headers: { Authorization: `Bearer ${authToken}` } }
             );
-            console.log(res.data);
+            const { token } = res.data;
             setPassword('');
             setPassword1('');
             setPassword2('');
             document.getElementById('password').value = '';
             document.getElementById('password1').value = '';
             document.getElementById('password2').value = '';
-            localStorage.setItem('authToken', res.data.token);
+            localStorage.setItem('authToken', token);
             new frontEndError('Password Changed', 'password2', '');
             setLoading('');
+            setUser({ ...user, token });
         } catch (e) {
             console.log('Change Password', e.message);
             console.log(e.response);
@@ -194,18 +198,16 @@ const EditPassword = ({ user, setUser, setViewMode }) => {
             </div>
             <div className="d-flex justify-content-evenly">
                 <div className="flex-grow-0">
-                    <input
-                        type="button"
-                        className="d-inline btn btn-info text-light"
-                        id="savepassword"
+                    <LoadingButton
+                        loading={loading}
+                        className={'flex-grow-0'}
+                        id="change-password"
                         value="Save"
                         onClick={changePassword}
-                        disabled={password1 !== password2}
+                        disabled={loading || password1 !== password2}
                     />
                 </div>
-                <div
-                    className={loading ? 'spinner-border text-danger' : ''}
-                ></div>
+
                 <div className="flex-grow-0">
                     <input
                         type="button"

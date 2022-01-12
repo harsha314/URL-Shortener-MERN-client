@@ -41,6 +41,7 @@ const UserProfile = ({ user, setUser }) => {
                         loading={loading}
                         id="delete"
                         value="delete"
+                        cssType="danger"
                         onClick={deleteAccount}
                     />
                 </div>

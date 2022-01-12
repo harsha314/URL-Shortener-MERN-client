@@ -109,7 +109,7 @@ const EditEmail = ({ user, setUser, setViewMode }) => {
             );
             console.log(res);
             setLoading('');
-            // setUser({});
+            setUser({ ...user, email });
         } catch (e) {
             console.log(e.message);
             setLoading('');
@@ -158,13 +158,17 @@ const EditEmail = ({ user, setUser, setViewMode }) => {
             </div>
 
             <div className="d-flex justify-content-evenly">
-                <input
-                    type="button"
-                    className="btn btn-primary flex-grow-0"
+                <LoadingButton
+                    loading={loading}
+                    className={'flex-grow-0'}
+                    id="change-email"
                     value="Save"
                     onClick={changeEmail}
-                    disabled={!validEmail || validEmail.current !== email}
+                    disabled={
+                        loading || !validEmail || validEmail.current !== email
+                    }
                 />
+
                 <input
                     type="button"
                     className="btn btn-secondary flex-grow-0"
