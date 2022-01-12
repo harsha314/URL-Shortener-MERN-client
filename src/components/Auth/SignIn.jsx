@@ -78,7 +78,10 @@ const SignIn = ({ user, setUser }) => {
             className="row justify-content-center align-items-center"
             style={{ height: '50vh' }}
         >
-            <div className="col-sm-10 col-md-6 col-lg-4 col-xl-3">
+            <div
+                className="col-10 col-md-6 col-lg-4 col-xl-3"
+                // style={{ maxWidth: '90vw' }}
+            >
                 <h1 className="text-center mb-3">Sign In</h1>
                 <form>
                     <div className="mb-1">

@@ -22,12 +22,12 @@ const UnAuthenticatedNav = () => {
                 className="collapse navbar-collapse"
                 id="navbarSupportedContent"
             >
-                <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                <ul className="navbar-nav mt-2 mt-lg-0 ms-auto mb-2 mb-lg-0">
                     <li className="nav-item mx-3">
                         <Link
                             to="/"
                             id="home-link"
-                            className={`nav-link active text-center`}
+                            className={`nav-link text-center shadow-none`}
                         >
                             Home
                         </Link>
@@ -36,7 +36,7 @@ const UnAuthenticatedNav = () => {
                         <Link
                             to="/signup"
                             id="signup-link"
-                            className={`nav-link active text-center`}
+                            className={`nav-link text-center shadow-none`}
                         >
                             Sign-up
                         </Link>
@@ -45,7 +45,7 @@ const UnAuthenticatedNav = () => {
                         <Link
                             to="/signin"
                             id="signin-link"
-                            className={`nav-link active text-center`}
+                            className={`nav-link text-center shadow-none`}
                         >
                             Sign-in
                         </Link>
@@ -54,7 +54,7 @@ const UnAuthenticatedNav = () => {
                         <Link
                             id="forgotpassword-link"
                             to="/forgotpassword"
-                            className={`nav-link active text-center`}
+                            className={`nav-link text-center shadow-none`}
                         >
                             Forgot Password
                         </Link>
@@ -93,26 +93,30 @@ const AuthenticatedNav = ({ setUser }) => {
                 className="collapse navbar-collapse"
                 id="navbarSupportedContent"
             >
-                <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                <ul className="navbar-nav mt-2 mt-lg-0 ms-auto mb-2 mb-lg-0">
                     <li className="nav-item mx-3">
-                        <Link to="/" id="home-link" className="nav-link active">
+                        <Link
+                            to="/"
+                            id="home-link"
+                            className="nav-link active text-center shadow-none"
+                        >
                             Home
                         </Link>
                     </li>
-                    <li className="nav-item mx-3">
+                    <li className="nav-item mx-3 ">
                         <Link
                             to="/profile"
                             id="profile-link"
-                            className="nav-link active"
+                            className="nav-link active text-center shadow-none"
                         >
                             User Profile
                         </Link>
                     </li>
-                    <li className="nav-item mx-3">
+                    <li className="nav-item mx-3 ">
                         <Link
                             id="signin-link"
                             to="/signin"
-                            className="nav-link active"
+                            className="nav-link active text-center"
                             onClick={signOut}
                         >
                             sign out

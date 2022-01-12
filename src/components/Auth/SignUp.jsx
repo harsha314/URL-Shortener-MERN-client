@@ -79,7 +79,7 @@ const SignUp = ({ user, setUser }) => {
 
     return (
         <div className="row justify-content-center align-items-center mt-5">
-            <div className="col-sm-10 col-md-6 col-lg-4 col-xl-3">
+            <div className="col-10 col-md-6 col-lg-4 col-xl-3">
                 <h1 className="mb-3 text-center">Sign Up</h1>
                 <form>
                     <div className="mb-2">

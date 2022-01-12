@@ -53,10 +53,7 @@ const Urls = ({ urls, setUrls }) => {
             className="row justify-content-center"
             style={{ maxWidth: '100%' }}
         >
-            <div
-                className="card m-2"
-                style={{ width: '24rem', minWidth: '24rem' }}
-            >
+            <div className="card m-2" style={{ width: '24rem' }}>
                 <div className="card-body">
                     <div className="mb-1">
                         <div
