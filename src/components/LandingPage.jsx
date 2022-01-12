@@ -69,8 +69,8 @@ const LandingPage = ({ user, setUser }) => {
     }
 
     return (
-        <div className="">
-            <Urls urls={urls} setUrls={setUrls} type={'old-card'} />
+        <div className="m-5">
+            <Urls urls={urls} setUrls={setUrls} />
         </div>
     );
 };
@@ -103,7 +103,7 @@ const VerifyUser = ({ user, setUser }) => {
         >
             <div
                 className="card m-2"
-                style={{ width: '24rem', minWidth: '24rem' }}
+                style={{ width: '24rem', maxWidth: '90vw' }}
             >
                 <div className="card-body">
                     <div className="mb-1">

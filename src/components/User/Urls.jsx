@@ -50,10 +50,15 @@ const Urls = ({ urls, setUrls }) => {
     };
     return (
         <div
-            className="row justify-content-center"
-            style={{ maxWidth: '100%' }}
+            className="row justify-content-center justify-content-lg-start"
+            style={{ maxWidth: '90vw' }}
         >
-            <div className="card m-2" style={{ width: '24rem' }}>
+            <div
+                className="card m-2"
+                style={{
+                    width: '24rem'
+                }}
+            >
                 <div className="card-body">
                     <div className="mb-1">
                         <div

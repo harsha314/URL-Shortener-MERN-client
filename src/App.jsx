@@ -24,8 +24,6 @@ const App = () => {
 
     const location = useLocation();
 
-    console.log(API_URL);
-
     useEffect(() => {
         const loadUser = async () => {
             try {
