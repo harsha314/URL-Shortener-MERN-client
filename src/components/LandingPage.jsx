@@ -57,9 +57,6 @@ const LandingPage = ({ user, setUser }) => {
         return (
             <div className="text-center my-3">
                 <h1 className="mb-3"> Sign-In to view your shortened URLs. </h1>
-                <p className="fs-6">
-                    Recommended Browser : Chromium & Chrome Based Browsers
-                </p>
             </div>
         );
     }

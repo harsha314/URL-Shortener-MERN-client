@@ -18,17 +18,17 @@ const Email = ({ user, setUser }) => {
     };
 
     return (
-        <div className="row align-items-stretch">
-            <div className="col-4 my-auto">
+        <div className="row">
+            <div className="col-sm-4 my-auto">
                 <p className="fw-bold my-auto">Email</p>
             </div>
             <div
                 className={
-                    'col-8 d-flex justify-content-end ' +
+                    'col-sm-8 d-flex justify-content-end ' +
                     (mode === 'edit' ? 'py-2' : '')
                 }
             >
-                <p className="d-inline my-auto">{user.email}</p>
+                <p className="my-auto">{user.email}</p>
                 <input
                     type="button"
                     value="edit"

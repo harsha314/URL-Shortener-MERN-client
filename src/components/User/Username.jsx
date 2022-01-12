@@ -29,7 +29,7 @@ const Username = ({ user, setUser }) => {
                     (mode === 'edit' ? 'py-2' : '')
                 }
             >
-                <p className="d-inline my-auto">{`${user.fname} ${user.lname}`}</p>
+                <p className="my-auto">{`${user.fname} ${user.lname}`}</p>
                 <input
                     type="button"
                     value="edit"

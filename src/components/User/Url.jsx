@@ -163,8 +163,9 @@ const Url = ({ urls, setUrls, url }) => {
                             readOnly
                         /> */}
                         <div
-                            className="input-group-text"
+                            className="input-group-text overflow-hidden"
                             id={`redirect-url${url._id}`}
+                            style={{ maxWidth: '6em', maxHeight: '2.3em' }}
                         >
                             {REDIRECT_URL.slice(REDIRECT_URL.indexOf('/') + 2)}
                         </div>
