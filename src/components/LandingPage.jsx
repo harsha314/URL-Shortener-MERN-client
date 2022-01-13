@@ -56,8 +56,8 @@ const LandingPage = ({ user, setUser }) => {
     if (!user.email) {
         return (
             <div
-                className="m-sm-2 m-0 d-flex flex-column justify-content-center align-items-center my-3"
-                style={{ height: '80vh' }}
+                className="m-sm-2 m-0 mb-0 d-flex flex-column justify-content-center align-items-center my-3"
+                style={{ height: 'vh' }}
             >
                 <p className="fs-3 mb-3">
                     {' '}
@@ -68,6 +68,28 @@ const LandingPage = ({ user, setUser }) => {
                     style={{ width: '36rem', maxWidth: '90vw' }}
                     alt="Loading..."
                 ></img>
+                <footer className="d-flex" style={{ width: '100vw' }}>
+                    <div className="flex-grow-1 d-flex align-items-center justify-content-center">
+                        <div className="mx-5 my-2">
+                            <a
+                                href="https://github.com/harsha314/URL-Shortener-MERN"
+                                target="_blank"
+                                className="btn h5"
+                            >
+                                Github Repo
+                            </a>
+                        </div>
+                        <div className="mx-5 my-2">
+                            <a
+                                href="https://github.com/harsha314"
+                                target="_blank"
+                                className="btn h5"
+                            >
+                                harsha314
+                            </a>
+                        </div>
+                    </div>
+                </footer>
             </div>
         );
     }
