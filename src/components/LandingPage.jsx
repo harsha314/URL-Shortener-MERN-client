@@ -56,8 +56,8 @@ const LandingPage = ({ user, setUser }) => {
     if (!user.email) {
         return (
             <div
-                className="m-sm-2 m-0 mb-0 d-flex flex-column justify-content-center align-items-center my-3"
-                style={{ height: 'vh' }}
+                className="m-sm-2 m-0 mb-0 d-flex flex-column justify-content-between align-items-center my-3"
+                style={{ height: '80vh' }}
             >
                 <p className="fs-3 mb-3">
                     {' '}
@@ -66,6 +66,7 @@ const LandingPage = ({ user, setUser }) => {
                 <img
                     src="./demo.gif"
                     style={{ width: '36rem', maxWidth: '90vw' }}
+                    className="border border-dark"
                     alt="Loading..."
                 ></img>
                 <footer className="d-flex" style={{ width: '100vw' }}>
