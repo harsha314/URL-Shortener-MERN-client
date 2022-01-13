@@ -55,8 +55,19 @@ const LandingPage = ({ user, setUser }) => {
 
     if (!user.email) {
         return (
-            <div className="text-center my-3">
-                <h1 className="mb-3"> Sign-In to view your shortened URLs. </h1>
+            <div
+                className="m-sm-2 m-0 d-flex flex-column justify-content-center align-items-center my-3"
+                style={{ height: '80vh' }}
+            >
+                <p className="fs-3 mb-3">
+                    {' '}
+                    Sign-In to view your shortened URLs.{' '}
+                </p>
+                <img
+                    src="./demo.gif"
+                    style={{ width: '36rem', maxWidth: '90vw' }}
+                    alt="Loading..."
+                ></img>
             </div>
         );
     }

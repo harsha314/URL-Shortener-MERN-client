@@ -66,7 +66,7 @@ const SignUp = ({ user, setUser }) => {
                 if (e.message === 'Network Error')
                     setUser({ internalServerError: true });
             } else if (res.status === 405)
-                new frontEndError(res.data.msg, 'email');
+                new frontEndError(res.data.error, res.data.cause);
             else if (res.status === 422)
                 new frontEndError('Invalid Email', 'email');
             setLoading('');
