@@ -27,7 +27,7 @@ const UnAuthenticatedNav = () => {
                         <Link
                             to="/"
                             id="home-link"
-                            className={`nav-link text-center shadow-none`}
+                            className={`nav-link active text-center shadow-none`}
                         >
                             Home
                         </Link>
@@ -36,7 +36,7 @@ const UnAuthenticatedNav = () => {
                         <Link
                             to="/signup"
                             id="signup-link"
-                            className={`nav-link text-center shadow-none`}
+                            className={`nav-link active text-center shadow-none`}
                         >
                             Sign-up
                         </Link>
@@ -45,7 +45,7 @@ const UnAuthenticatedNav = () => {
                         <Link
                             to="/signin"
                             id="signin-link"
-                            className={`nav-link text-center shadow-none`}
+                            className={`nav-link active text-center shadow-none`}
                         >
                             Sign-in
                         </Link>
@@ -54,7 +54,7 @@ const UnAuthenticatedNav = () => {
                         <Link
                             id="forgotpassword-link"
                             to="/forgotpassword"
-                            className={`nav-link text-center shadow-none`}
+                            className={`nav-link active text-center shadow-none`}
                         >
                             Forgot Password
                         </Link>

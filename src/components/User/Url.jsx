@@ -162,13 +162,20 @@ const Url = ({ urls, setUrls, url }) => {
                             defaultValue={REDIRECT_URL}
                             readOnly
                         /> */}
-                        <div
+                        {/* <div
                             className="input-group-text overflow-hidden"
                             id={`redirect-url${url._id}`}
-                            style={{ maxWidth: '6em', maxHeight: '2.3em' }}
+                            // style={{ maxWidth: '6em', maxHeight: '2.3em' }}
                         >
                             {REDIRECT_URL.slice(REDIRECT_URL.indexOf('/') + 2)}
-                        </div>
+                        </div> */}
+                        <textarea
+                            className="input-group-text overflow-hidden"
+                            defaultValue={REDIRECT_URL.slice(
+                                REDIRECT_URL.indexOf('/') + 2
+                            )}
+                            style={{ height: '2.3em', resize: 'horizontal' }}
+                        ></textarea>
 
                         <input
                             ref={shortUrlRef}

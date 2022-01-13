@@ -1,6 +1,6 @@
 const InternalServerError = ({ setUser }) => {
     const backToHome = (e) => {
-        setUser(undefined);
+        setUser({});
     };
     return (
         <div

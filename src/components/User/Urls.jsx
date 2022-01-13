@@ -51,7 +51,7 @@ const Urls = ({ urls, setUrls }) => {
     return (
         <div
             className="row justify-content-center justify-content-lg-start"
-            style={{ maxWidth: '90vw' }}
+            style={{ maxWidth: '95vw' }}
         >
             <div
                 className="card m-2"
