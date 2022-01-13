@@ -96,6 +96,12 @@ const Url = ({ urls, setUrls, url }) => {
         }
     };
 
+    const toggleUrl = (e) => {
+        let x = e.target;
+
+        x.textContent = x.textContent === 'URL' ? REDIRECT_URL : 'URL';
+    };
+
     const toLastCorrect = (e) => {
         console.log('toLastCorrect', prevLongUrl.current, prevShortUrl.current);
         setLongUrl(prevLongUrl.current);
@@ -108,14 +114,10 @@ const Url = ({ urls, setUrls, url }) => {
 
     const copyToClipboard = (e) => {
         e.preventDefault();
-        console.log(e.target.id);
         new Clipboard(`#${e.target.id}`, {
-            text: function (trigger) {
+            text: function () {
                 var a = document.querySelector(`#shortUrl${url._id}`).value;
-                var b = document.querySelector(
-                    `#redirect-url${url._id}`
-                ).textContent;
-                return `${b}/${a}`;
+                return `${REDIRECT_URL}/${a}`;
             }
         });
         e.target.value = '✅';
@@ -159,23 +161,19 @@ const Url = ({ urls, setUrls, url }) => {
                             type="text"
                             className="input-group-text"
                             id={`redirect-url${url._id}`}
-                            defaultValue={REDIRECT_URL}
+                            value={'URL'}
+                            // value={REDIRECT_URL}
+                            onClick={toggleUrl}
                             readOnly
                         /> */}
-                        {/* <div
-                            className="input-group-text overflow-hidden"
+                        <span
+                            className="input-group-text btn btn-secondary"
                             id={`redirect-url${url._id}`}
-                            // style={{ maxWidth: '6em', maxHeight: '2.3em' }}
+                            onClick={toggleUrl}
+                            title="Click to show full URL"
                         >
-                            {REDIRECT_URL.slice(REDIRECT_URL.indexOf('/') + 2)}
-                        </div> */}
-                        <textarea
-                            className="input-group-text overflow-hidden"
-                            defaultValue={REDIRECT_URL.slice(
-                                REDIRECT_URL.indexOf('/') + 2
-                            )}
-                            style={{ height: '2.3em', resize: 'horizontal' }}
-                        ></textarea>
+                            {'URL'}
+                        </span>
 
                         <input
                             ref={shortUrlRef}
@@ -194,8 +192,6 @@ const Url = ({ urls, setUrls, url }) => {
                             onClick={copyToClipboard}
                             disabled={loading}
                             data-clipboard-action="copy"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="top"
                             title="Copy to Clipboard"
                         />
                     </div>
